@@ -47,19 +47,20 @@
     <h1>Warning</h1>
     <h3>DO NOT CLICK RANDOM LINKS!</h3>
 
+    <audio id="alarm" loop>
+        <source src="https://www.pachd.com/sfx/alarm_ringing_1.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <button onclick="playSound()">Play Sound</button>
 
     <script>
-
-function PlayMusic() {
-
-      var play=document.getElementById("music");
-      play.play();
-      }
-
-      $(document).ready(function(){
-      setTimeout(PlayMusic,3000);
-      })
-
+    window.addEventListener('load', function() {
+        const audio = document.getElementById('alarm');
+        audio.play().catch(error => {
+            console.error('Audio playback failed:', error);
+        });
+    });
     </script>
 </body>
 </html>
