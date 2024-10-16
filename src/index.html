@@ -1,13 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>LinkWarn</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warning Alert</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+            animation: flash 1s infinite;
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes flash {
+            0% { background-color: red; }
+            50% { background-color: black; }
+            100% { background-color: red; }
+        }
+
+        h1, h2 {
+            color: yellow;
+            font-size: 5em;
+            text-align: center;
+            text-transform: uppercase;
+            animation: pulse 0.5s infinite alternate;
+        }
+
+        h3 {
+            font-size: 1em;
+            margin-top: 20px;
+            color: white;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+    </style>
 </head>
 <body>
-  <app-root></app-root>
+    <h1>Warning</h1>
+    <h3>DO NOT CLICK RANDOM LINKS!</h3>
+
+
+    <script>
+
+function PlayMusic() {
+
+      var play=document.getElementById("music");
+      play.play();
+      }
+
+      $(document).ready(function(){
+      setTimeout(PlayMusic,3000);
+      })
+
+    </script>
 </body>
 </html>
